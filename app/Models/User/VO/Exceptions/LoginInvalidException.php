@@ -6,5 +6,4 @@ namespace App\Models\User\VO\Exceptions;
 
 final class LoginInvalidException extends \RuntimeException
 {
-
 }

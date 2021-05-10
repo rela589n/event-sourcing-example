@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace App\Models\User\Events;
 
 use App\Models\User\Doctrine\User;

@@ -33,6 +33,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $updated_at
  * @property-read DatabaseNotificationCollection|DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
+ *
  * @method static EloquentCollection|static[] all($columns = ['*'])
  * @method static EloquentCollection|static[] get($columns = ['*'])
  * @method static UserEloquentBuilder|User newModelQuery()

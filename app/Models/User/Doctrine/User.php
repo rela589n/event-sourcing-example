@@ -173,6 +173,7 @@ class User implements AggregateRoot
     {
         $events = $this->newlyRecordedEvents;
         $this->newlyRecordedEvents = [];
+
         return $events;
     }
 

@@ -13,7 +13,9 @@ use Illuminate\Http\Request;
 
 final class UserController extends Controller
 {
-    public function __construct(private UserBus $bus) { }
+    public function __construct(private UserBus $bus)
+    {
+    }
 
     public function register(Request $request)
     {

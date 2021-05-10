@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Models\User\VO\Exceptions;
 
-
 final class PasswordTooLongException extends \RuntimeException
 {
     private string $sourcePassword;
@@ -17,7 +16,7 @@ final class PasswordTooLongException extends \RuntimeException
                 'exceptions/value-objects/password.too-long',
                 [
                     'maxLength'     => $maxLength,
-                    'currentLength' => mb_strlen($sourcePassword)
+                    'currentLength' => mb_strlen($sourcePassword),
                 ]
             )
         );

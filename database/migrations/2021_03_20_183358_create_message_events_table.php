@@ -29,7 +29,6 @@ final class CreateMessageEventsTable extends Migration
                 $table->timestampTz('timestamp');
             }
         );
-
     }
 
     public function down()

@@ -13,8 +13,9 @@ interface AccessGate extends \Illuminate\Contracts\Auth\Access\Gate
     /**
      * Determine if all of the given abilities should be denied for the current user.
      *
-     * @param  iterable|string  $abilities
-     * @param  array|mixed  $arguments
+     * @param iterable|string $abilities
+     * @param array|mixed $arguments
+     *
      * @return bool
      */
     public function none($abilities, $arguments = []);
@@ -22,7 +23,8 @@ interface AccessGate extends \Illuminate\Contracts\Auth\Access\Gate
     /**
      * Specify a callback to be used to guess policy names.
      *
-     * @param  callable  $callback
+     * @param callable $callback
+     *
      * @return \Illuminate\Auth\Access\Gate
      */
     public function guessPolicyNamesUsing(callable $callback);
@@ -32,7 +34,8 @@ interface AccessGate extends \Illuminate\Contracts\Auth\Access\Gate
     /**
      * Build a policy class instance of the given type.
      *
-     * @param  object|string  $class
+     * @param object|string $class
+     *
      * @return mixed
      *
      * @throws \Illuminate\Contracts\Container\BindingResolutionException

@@ -29,7 +29,7 @@ trait PipedBus
 
     public function addPipe(array|callable $pipe): self
     {
-        $this->pipes [] = $pipe;
+        $this->pipes[] = $pipe;
 
         return $this;
     }

@@ -16,13 +16,13 @@ final class CreateUserEventsTable extends Migration
                 $table->id();
 
                 $table->string('name')
-                      ->index();
+                    ->index();
 
                 $table->foreignUuid('user_uuid')
-                      ->references('uuid')
-                      ->on('users')
-                      ->cascadeOnUpdate()
-                      ->restrictOnDelete();
+                    ->references('uuid')
+                    ->on('users')
+                    ->cascadeOnUpdate()
+                    ->restrictOnDelete();
 
                 $table->jsonb('payload');
 

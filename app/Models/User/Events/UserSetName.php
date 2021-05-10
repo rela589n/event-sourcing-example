@@ -23,7 +23,7 @@ class UserSetName extends UserEvent
 
     public static function with(User $user, UserName $userName): self
     {
-        return new self($user,$userName);
+        return new self($user, $userName);
     }
 
     public function getUserName(): UserName

@@ -27,6 +27,7 @@ use Illuminate\Support\Carbon;
  * @property ChatName $name
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @method static EloquentCollection|static[] all($columns = ['*'])
  * @method static EloquentCollection|static[] get($columns = ['*'])
  * @method static ChatEloquentBuilder|Chat newModelQuery()
@@ -37,12 +38,14 @@ use Illuminate\Support\Carbon;
  * @method static ChatEloquentBuilder|Chat whereUpdatedAt($value)
  * @method static ChatEloquentBuilder|Chat whereUuid($value)
  * @mixin Eloquent
+ *
  * @property-read EloquentCollection|User[] $users
  * @property-read int|null $users_count
  * @property-read \App\Models\Message\Eloquent\Collections\MessagesEloquentCollection|Message[] $messages
  * @property-read int|null $messages_count
  * @property \Ramsey\Uuid\UuidInterface|null $user_uuid
  * @property-read User $user
+ *
  * @method static ChatEloquentBuilder|Chat whereUserUuid($value)
  */
 final class Chat extends AppModel

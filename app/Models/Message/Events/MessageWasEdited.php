@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace App\Models\Message\Events;
 
 use App\Models\Message\Doctrine\Message;

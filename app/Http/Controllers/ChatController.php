@@ -17,7 +17,9 @@ use JetBrains\PhpStorm\Immutable;
 #[Immutable]
 final class ChatController extends Controller
 {
-    public function __construct(private ChatBus $bus) { }
+    public function __construct(private ChatBus $bus)
+    {
+    }
 
     public function show(Request $request, string $chatUuid)
     {

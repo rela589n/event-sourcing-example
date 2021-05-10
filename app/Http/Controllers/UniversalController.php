@@ -12,7 +12,9 @@ use JetBrains\PhpStorm\Immutable;
 #[Immutable]
 final class UniversalController
 {
-    public function __construct(private UniversalService $service) { }
+    public function __construct(private UniversalService $service)
+    {
+    }
 
     public function runCommand(Request $request)
     {

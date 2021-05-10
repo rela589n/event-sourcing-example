@@ -10,7 +10,9 @@ use JetBrains\PhpStorm\Immutable;
 #[Immutable]
 final class Guarded
 {
-    public function __construct(private AccessGate $gate) { }
+    public function __construct(private AccessGate $gate)
+    {
+    }
 
     public function handle(object $command, array $handle)
     {

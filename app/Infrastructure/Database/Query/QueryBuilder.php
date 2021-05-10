@@ -84,7 +84,7 @@ class QueryBuilder extends Builder
     public function withSub($query, $as): self
     {
         if (is_null($this->columns)) {
-            $this->select([$this->from . '.*']);
+            $this->select([$this->from.'.*']);
         }
 
         return $this->selectSub($query, $as);

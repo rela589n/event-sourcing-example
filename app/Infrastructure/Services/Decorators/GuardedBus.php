@@ -24,7 +24,6 @@ final class GuardedBus implements ServiceBus\Contract
         private ServiceBus\Contract $bus,
         private AccessGate $gate,
     ) {
-        //
     }
 
     protected function getHandler(object $command): array

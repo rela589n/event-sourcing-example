@@ -51,8 +51,8 @@ final class ChatBus extends ServiceBus
     protected function createChat(CreateChat $dto): void
     {
         if (ChatEloquentBuilder::query()
-                               ->where('uuid', $dto->chatUuid)
-                               ->exists()) {
+            ->where('uuid', $dto->chatUuid)
+            ->exists()) {
             throw new InvalidArgumentException("Chat with uuid '$dto->chatUuid' already exists");
         }
 

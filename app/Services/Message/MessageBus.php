@@ -50,8 +50,8 @@ final class MessageBus extends ServiceBus
     protected function writeMessage(WriteMessage $dto): void
     {
         if (MessageEloquentBuilder::query()
-                                  ->where('uuid', $dto->messageUuid)
-                                  ->exists()) {
+            ->where('uuid', $dto->messageUuid)
+            ->exists()) {
             throw new InvalidArgumentException("Message with '$dto->messageUuid' uuid already exists");
         }
 

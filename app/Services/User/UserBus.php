@@ -52,14 +52,14 @@ final class UserBus extends ServiceBus
     protected function register(RegisterUser $dto): void
     {
         if (UserEloquentBuilder::query()
-                               ->where('uuid', $dto->userUuid)
-                               ->exists()) {
+            ->where('uuid', $dto->userUuid)
+            ->exists()) {
             throw new InvalidArgumentException("Uuid '$dto->userUuid' is already taken");
         }
 
         if (UserEloquentBuilder::query()
-                               ->whereLogin($dto->login)
-                               ->exists()) {
+            ->whereLogin($dto->login)
+            ->exists()) {
             throw new InvalidArgumentException("User with '$dto->login' login already exists");
         }
 
@@ -83,8 +83,8 @@ final class UserBus extends ServiceBus
 
         if (!$event->getNewLogin()->equals($event->getOldLogin())
             && UserEloquentBuilder::query()
-                                  ->whereLogin($dto->newLogin)
-                                  ->exists()) {
+                ->whereLogin($dto->newLogin)
+                ->exists()) {
             $user->changeLogin($event->getOldLogin());
             throw new InvalidArgumentException("User with '$dto->newLogin' login already exists");
         }

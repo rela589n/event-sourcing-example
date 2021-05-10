@@ -59,6 +59,7 @@ class Chat implements AggregateRoot
         $chat = new self($uuid);
         $chat->recordThat(ChatCreated::with($chat, $creator, $name));
         $chat->acceptUser($creator);
+
         return $chat;
     }
 
@@ -134,6 +135,7 @@ class Chat implements AggregateRoot
     {
         $events = $this->newlyRecordedEvents;
         $this->newlyRecordedEvents = [];
+
         return $events;
     }
 

@@ -13,7 +13,9 @@ use function array_map;
 #[Immutable]
 final class Impl implements EventDispatcher
 {
-    public function __construct(private Dispatcher $decorated) { }
+    public function __construct(private Dispatcher $decorated)
+    {
+    }
 
     public function listen($events, $listener = null)
     {

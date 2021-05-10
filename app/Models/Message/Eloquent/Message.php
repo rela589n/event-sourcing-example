@@ -30,6 +30,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $updated_at
  * @property-read Chat $chat
  * @property-read User $user
+ *
  * @method static MessagesEloquentCollection|static[] all($columns = ['*'])
  * @method static MessagesEloquentCollection|static[] get($columns = ['*'])
  * @method static MessageEloquentBuilder|Message newModelQuery()

@@ -122,18 +122,16 @@ final class DomainModelTest extends TestCase
         );
         $chats = [];
 
-
-        $chats [] = $user->createChat(Uuid::uuid6(), ChatName::fromString('Some name'));
-        $chats [] = $user->createChat(Uuid::uuid6(), ChatName::fromString('Some name'));
-        $chats [] = $user->createChat(Uuid::uuid6(), ChatName::fromString('Some name'));
+        $chats[] = $user->createChat(Uuid::uuid6(), ChatName::fromString('Some name'));
+        $chats[] = $user->createChat(Uuid::uuid6(), ChatName::fromString('Some name'));
+        $chats[] = $user->createChat(Uuid::uuid6(), ChatName::fromString('Some name'));
         dd($user->chatsCreatedToday());
 
-        $chats [] = Chat::create($user, Uuid::uuid4(), ChatName::fromString('Some name'));
-        $chats [] = Chat::create($user, Uuid::uuid4(), ChatName::fromString('Some name'));
+        $chats[] = Chat::create($user, Uuid::uuid4(), ChatName::fromString('Some name'));
+        $chats[] = Chat::create($user, Uuid::uuid4(), ChatName::fromString('Some name'));
 
         $this->expectException(InvalidArgumentException::class);
-        $chats [] = Chat::create($user, Uuid::uuid4(), ChatName::fromString('Some name'));
-
+        $chats[] = Chat::create($user, Uuid::uuid4(), ChatName::fromString('Some name'));
     }
 
     public function testWriteMessage(): void

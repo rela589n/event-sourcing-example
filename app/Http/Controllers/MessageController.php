@@ -17,7 +17,9 @@ use JetBrains\PhpStorm\Immutable;
 #[Immutable]
 final class MessageController extends Controller
 {
-    public function __construct(private MessageBus $bus) { }
+    public function __construct(private MessageBus $bus)
+    {
+    }
 
     public function index(Request $request)
     {

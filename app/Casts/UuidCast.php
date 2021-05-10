@@ -11,7 +11,9 @@ use Webmozart\Assert\Assert;
 
 final class UuidCast implements CastsAttributes
 {
-    public function __construct(private string $column) { }
+    public function __construct(private string $column)
+    {
+    }
 
     public function get($model, string $key, $value, array $attributes): UuidInterface
     {
