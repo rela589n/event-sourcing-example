@@ -44,7 +44,7 @@ return PhpCsFixer\Config::create()
         'combine_consecutive_issets' => true,
         'combine_consecutive_unsets' => true,
         'compact_nullable_typehint' => true,
-        'concat_space' => ['spacing' => false],
+        'concat_space' => ['spacing' => 'none'],
         'declare_equal_normalize' => true,
         'elseif' => true,
         'encoding' => true,

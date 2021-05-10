@@ -34,7 +34,3 @@ docker-compose up -d
 ```shell
 docker-compose exec -T app bash -c 'composer install && php artisan migrate:refresh --seed'
 ```
-
-## States
-
-For model states transitions management we use `spatie/laravel-model-states` vendor package. See [documentation](https://github.com/spatie/laravel-model-states).
