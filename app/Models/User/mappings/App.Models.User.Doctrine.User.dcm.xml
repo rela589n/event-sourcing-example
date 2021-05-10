@@ -1,0 +1,36 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="App\Models\User\Doctrine\User" table="users">
+        <id name="uuid" type="uuid" column="uuid">
+            <generator strategy="NONE"/>
+        </id>
+
+        <embedded name="login" class="App\Models\User\VO\Login" use-column-prefix="false"/>
+        <embedded name="password" class="App\Models\User\VO\Password" use-column-prefix="false"/>
+        <embedded name="name" class="App\Models\User\VO\UserName" use-column-prefix="false"/>
+
+        <field name="createdAt" type="carbondatetime" column="created_at"/>
+        <field name="updatedAt" type="carbondatetime" column="updated_at"/>
+
+        <one-to-many field="createdChats" target-entity="App\Models\Chat\Doctrine\Chat" mapped-by="creator"/>
+
+        <many-to-many field="chats" target-entity="App\Models\Chat\Doctrine\Chat">
+            <join-table name="user_chat">
+                <join-columns>
+                    <join-column name="user_uuid" referenced-column-name="uuid"/>
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="chat_uuid" referenced-column-name="uuid"/>
+                </inverse-join-columns>
+            </join-table>
+        </many-to-many>
+
+        <one-to-many field="recordedEvents" target-entity="App\Models\User\Events\UserEvent" mapped-by="entity">
+            <cascade>
+                <cascade-persist/>
+            </cascade>
+        </one-to-many>
+    </entity>
+</doctrine-mapping>

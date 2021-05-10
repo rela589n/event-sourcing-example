@@ -1,0 +1,32 @@
+#!/bin/bash
+set -eE
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+function errMessage {
+    printf "${RED}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n${NC}" >> /dev/stderr
+    printf "${RED}You have to fix your code. See details ABOVE\n${NC}" >> /dev/stderr
+    printf "${RED}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n${NC}" >> /dev/stderr
+    printf "${NC}\n"
+}
+
+trap 'errMessage' ERR
+
+if [ -f /.dockerenv ]; then
+    printf "${RED}do not run inside containers\n${NC}" >> /dev/stderr
+    exit 1
+fi
+
+#outside of container
+FILES_FOR_COMMIT=`git diff --cached --name-only --diff-filter=AM | tr "\n" " "`
+
+COMMANDS="./vendor/bin/php-cs-fixer fix --config=\".php_cs\" --dry-run --diff --path-mode=intersection --using-cache=no $FILES_FOR_COMMIT"
+
+pwd
+cd docker && docker-compose exec -T app bash -c "$COMMANDS"
+#docker-compose exec -T app bash -c "$COMMANDS"
+
+printf "${GREEN}Everything is good. You can continue"
+printf "${NC}\n"

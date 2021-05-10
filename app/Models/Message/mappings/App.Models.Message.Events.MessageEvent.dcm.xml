@@ -1,0 +1,18 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="App\Models\Message\Events\MessageEvent" table="message_events" inheritance-type="SINGLE_TABLE">
+        <many-to-one field="entity" target-entity="App\Models\Message\Doctrine\Message" inversed-by="recordedEvents">
+            <join-column name="message_uuid" referenced-column-name="uuid"/>
+        </many-to-one>
+
+        <discriminator-column name="name" type="string"/>
+
+        <discriminator-map>
+            <discriminator-mapping value="message_written" class="App\Models\Message\Events\MessageWritten"/>
+            <discriminator-mapping value="message_edited" class="App\Models\Message\Events\MessageWasEdited"/>
+            <discriminator-mapping value="message_deleted" class="App\Models\Message\Events\MessageWasDeleted"/>
+        </discriminator-map>
+    </entity>
+</doctrine-mapping>
