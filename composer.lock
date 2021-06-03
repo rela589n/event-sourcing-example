@@ -3553,12 +3553,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rela589n/doctrine-event-sourcing.git",
-                "reference": "1b31fd7ea5c6df9f95127fde4bf6d39469423ff9"
+                "reference": "98ea1d0b0689d8c8064eb7138e1de26ff9c188dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rela589n/doctrine-event-sourcing/zipball/1b31fd7ea5c6df9f95127fde4bf6d39469423ff9",
-                "reference": "1b31fd7ea5c6df9f95127fde4bf6d39469423ff9",
+                "url": "https://api.github.com/repos/rela589n/doctrine-event-sourcing/zipball/98ea1d0b0689d8c8064eb7138e1de26ff9c188dd",
+                "reference": "98ea1d0b0689d8c8064eb7138e1de26ff9c188dd",
                 "shasum": ""
             },
             "require": {
@@ -3590,7 +3590,11 @@
                 }
             ],
             "description": "Package for simple event-sourcing implementation utilizing Doctrine ORM",
-            "time": "2021-04-04T20:04:01+00:00"
+            "support": {
+                "issues": "https://github.com/rela589n/doctrine-event-sourcing/issues",
+                "source": "https://github.com/rela589n/doctrine-event-sourcing/tree/1.0.0"
+            },
+            "time": "2021-06-01T05:29:02+00:00"
         },
         {
             "name": "spatie/laravel-model-states",
@@ -10376,5 +10380,5 @@
         "php": "^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }
