@@ -40,7 +40,7 @@ class MessageWritten extends MessageEvent
         return $this->content;
     }
 
-    public function NAME(): string
+    public static function NAME(): string
     {
         return 'message_written';
     }

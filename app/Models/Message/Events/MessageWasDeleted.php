@@ -33,7 +33,7 @@ class MessageWasDeleted extends MessageEvent
         return $this->entity;
     }
 
-    public function NAME(): string
+    public static function NAME(): string
     {
         return 'message_deleted';
     }

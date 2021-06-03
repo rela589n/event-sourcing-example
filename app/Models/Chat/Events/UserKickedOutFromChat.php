@@ -31,7 +31,7 @@ class UserKickedOutFromChat extends ChatEvent
         return $this->entity;
     }
 
-    public function NAME(): string
+    public static function NAME(): string
     {
         return 'user_kicked_out_from_chat';
     }

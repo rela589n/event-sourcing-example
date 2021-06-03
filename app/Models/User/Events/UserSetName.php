@@ -31,7 +31,7 @@ class UserSetName extends UserEvent
         return $this->userName;
     }
 
-    public function NAME(): string
+    public static function NAME(): string
     {
         return 'user_set_name';
     }

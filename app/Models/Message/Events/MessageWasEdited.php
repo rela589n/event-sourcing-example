@@ -45,7 +45,7 @@ class MessageWasEdited extends MessageEvent
         return $this->editor;
     }
 
-    public function NAME(): string
+    public static function NAME(): string
     {
         return 'message_edited';
     }

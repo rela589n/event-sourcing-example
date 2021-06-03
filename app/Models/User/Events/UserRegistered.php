@@ -36,7 +36,7 @@ class UserRegistered extends UserEvent
         return $this->password;
     }
 
-    public function NAME(): string
+    public static function NAME(): string
     {
         return 'user_registered';
     }

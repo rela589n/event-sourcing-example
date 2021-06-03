@@ -29,7 +29,7 @@ class UserChangedPassword extends UserEvent
         return $this->newPassword;
     }
 
-    public function NAME(): string
+    public static function NAME(): string
     {
         return 'user_changed_password';
     }

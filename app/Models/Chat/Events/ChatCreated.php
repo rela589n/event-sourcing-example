@@ -44,7 +44,7 @@ class ChatCreated extends ChatEvent
         return $this->creator;
     }
 
-    public function NAME(): string
+    public static function NAME(): string
     {
         return 'chat_created';
     }

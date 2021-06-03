@@ -31,7 +31,7 @@ class UserLeftChat extends ChatEvent
         return $this->entity;
     }
 
-    public function NAME(): string
+    public static function NAME(): string
     {
         return 'user_left_chat';
     }
